@@ -7,7 +7,7 @@ export const StyledInput = styled.input.attrs<StyledTextInputComponentProps>(
   })
 )<StyledTextInputComponentProps>`
   border: 1px solid ${({ theme }) => theme.colors.black[100]};
-  border-radius: ${({ theme }) => theme.round.s};
+  border-radius: ${({ theme }) => theme.round.xs};
   padding: 1rem 1.2rem;
   outline: none;
   transition: .3s;
