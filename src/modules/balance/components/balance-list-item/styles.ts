@@ -1,4 +1,4 @@
-import { textOverflowMixin } from 'src/globalStyles';
+import { textOverflowMixin } from 'src/styles';
 import { RequestStatus } from 'src/types/global';
 import styled, { css } from 'styled-components';
 
