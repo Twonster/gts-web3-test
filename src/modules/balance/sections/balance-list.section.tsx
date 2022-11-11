@@ -1,4 +1,5 @@
 import { ReactElement, useMemo } from 'react';
+import { NoDataPlugComponent } from 'src/components/plugs/no-data/no-data.plug.component';
 import { BalanceListItem } from 'src/modules/balance/components/balance-list-item/balance-list-item.component';
 import { useAppSelector } from 'src/store/store';
 import styled from 'styled-components';
@@ -26,5 +27,14 @@ export const BalanceListSection = (): ReactElement => {
     [entities]
   );
 
-  return <Container>{MemoizedSortedList}</Container>;
+  return (
+    <Container>
+      {MemoizedSortedList}
+      {!Object.keys(entities).length && (
+        <NoDataPlugComponent variant="outlined" colors="black">
+          <span>no data</span>
+        </NoDataPlugComponent>
+      )}
+    </Container>
+  );
 };

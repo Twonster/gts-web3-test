@@ -1,16 +1,18 @@
+import { memo } from 'react';
 import { textOverflowMixin } from 'src/styles';
 import { RequestStatus } from 'src/types/global';
 import styled, { css } from 'styled-components';
 
 
-export const StyledListItemLabel = styled.span`
+const ListItemLabel = styled.span`
   text-transform: uppercase;
   font-size: 0.7rem;
   opacity: 0.5;
   font-weight: bold;
 `;
+export const StyledListItemLabel = memo(ListItemLabel);
 
-export const ListItemContainer = styled.div<{ status?: RequestStatus }>`
+export const ListItem = styled.div<{ status?: RequestStatus }>`
   display: flex;
   flex-direction: column;
   gap: .5rem;
@@ -107,3 +109,4 @@ export const ListItemContainer = styled.div<{ status?: RequestStatus }>`
     }
   }
 `;
+export const ListItemContainer = memo(ListItem);
