@@ -36,6 +36,7 @@ export const balancesSlice = createSlice({
         ...state.entities[pkh],
         ...payload[pkh]
       };
+      delete state.entities[pkh].error;
     });
     addCase(getBalanceFromPkh.rejected, (state, { payload, meta }) => {
       const pkh = meta.arg;
