@@ -26,13 +26,6 @@ export const ListItemContainer = styled.div<{ status?: RequestStatus }>`
     status === 'error' &&
     css`
       background-color: ${theme.colors.red[50]};
-
-      .error-text {
-        font-weight: bold;
-        font-size: .8rem;
-        overflow-wrap: break-word;
-        color: ${theme.colors.red[500]};
-      }
     `}
   ${({ status, theme }) =>
     status === 'loading' &&
@@ -45,6 +38,12 @@ export const ListItemContainer = styled.div<{ status?: RequestStatus }>`
       background-color: ${theme.colors.black[50]};
     `}
 
+  .error-text {
+    font-weight: bold;
+    font-size: .8rem;
+    overflow-wrap: break-word;
+    color: ${({ theme }) => theme.colors.red[500]};
+  }
   .content {
     flex-wrap: wrap;
     width: 100%;
